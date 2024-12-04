@@ -1,6 +1,6 @@
 # socialchat
 
-A new Flutter project.
+First Flutter app to practice, creating a social network for Android
 
 ## Getting Started
 
