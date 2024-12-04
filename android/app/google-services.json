@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544342716056",
+    "project_id": "socialchat-2affb",
+    "storage_bucket": "socialchat-2affb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544342716056:android:0ce1a6d31bcaa100b8eaed",
+        "android_client_info": {
+          "package_name": "com.example.socialchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5PdwrdWd2vfyB5xuFGFtJhguHBFyf6d8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
