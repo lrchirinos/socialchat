@@ -11,4 +11,5 @@ class CloudStorageService {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
   CloudStorageService() {}
+  
 }

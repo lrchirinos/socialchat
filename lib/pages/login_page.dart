@@ -10,6 +10,9 @@ import '../widgets/rounded_button.dart';
 //Services
 import '../services/navigation_service.dart';
 
+//Providers
+import '../providers/authentication_provider.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -21,8 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   late double _deviceHeight;
   late double _deviceWidth;
 
-  //late AuthenticationProvider _auth;
-  //late NavigationService _navigation;
+  late AuthenticationProvider _auth;
+  late NavigationService _navigation;
 
   final _loginFormKey = GlobalKey<FormState>();
 
@@ -33,6 +36,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
+    _auth = Provider.of<AuthenticationProvider>(context);
+    _navigation = GetIt.instance.get<NavigationService>();
     return _buildUI();
   }
 

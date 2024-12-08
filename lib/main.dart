@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
 
+//Packages
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:provider/provider.dart';
 
 //Services
 import './services/navigation_service.dart';
@@ -8,6 +11,10 @@ import './services/navigation_service.dart';
 //Pages
 import './pages/splash_page.dart';
 import './pages/login_page.dart';
+import './pages/home_page.dart';
+
+//Providers
+import './providers/authentication_provider.dart';
 
 void main() {
   runApp(
@@ -25,7 +32,15 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AuthenticationProvider>(
+          create: (BuildContext _context) {
+            return AuthenticationProvider();
+          },
+        )
+      ],
+      child:MaterialApp(
       title: 'SocialChat',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -41,7 +56,9 @@ class MainApp extends StatelessWidget {
         initialRoute: '/login',
         routes: {
           '/login': (BuildContext _context) => LoginPage(),
+          '/home': (BuildContext _context) => HomePage(),
         },
+      )
     );
   }
 }
